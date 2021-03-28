@@ -39,7 +39,8 @@ const getContactsForRender = (contacts, filter) => {
     : contacts;
 };
 
-const mapPropsToState = ({ contacts, filter }) => {
+const mapStateToProps = (state) => {
+  const { contacts, filter } = state.contacts;
   const contactsForRender = getContactsForRender(contacts, filter);
   return {
     contacts: contactsForRender,
@@ -50,4 +51,4 @@ const mapDispatchToProps = (dispatch) => ({
   onDelete: (id) => dispatch(deleteContact(id)),
 });
 
-export default connect(mapPropsToState, mapDispatchToProps)(ContactsList);
+export default connect(mapStateToProps, mapDispatchToProps)(ContactsList);

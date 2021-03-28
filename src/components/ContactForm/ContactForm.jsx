@@ -15,9 +15,10 @@ class ContactForm extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-
-    this.props.onSubmit(this.state);
-    this.resetForm();
+    if (this.state.name && this.state.number) {
+      this.props.onSubmit(this.state);
+      this.resetForm();
+    } else alert("No contact name or number!");
   };
 
   resetForm = () => {
@@ -58,9 +59,7 @@ class ContactForm extends React.Component {
   }
 }
 
-
 const mapDispatchToProps = (dispatch) => {
-
   return { onSubmit: ({ name, number }) => dispatch(addContact(name, number)) };
 };
 
