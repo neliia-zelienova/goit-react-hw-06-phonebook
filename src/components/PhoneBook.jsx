@@ -3,7 +3,6 @@ import ContactsList from "./ContactsList/ContactsList";
 import Filter from "./Filter/Filter";
 import ContactForm from "./ContactForm/ContactForm";
 import Container from "./Container/Container";
-import { connect } from "react-redux";
 
 class PhoneBook extends React.Component {
 

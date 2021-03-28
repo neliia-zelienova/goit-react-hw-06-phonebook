@@ -2,22 +2,31 @@ import React from "react";
 import { connect } from "react-redux";
 import styles from "./ContactsList.module.css";
 import { deleteContact } from "../../redux/contacts/contacts-actions";
+import Notification from "../Notification";
 
 const ContactsList = ({ contacts, onDelete }) => {
   return (
-    <ul className={styles.contacts__list}>
-      {contacts.map((contact) => (
-        <li key={contact.id} className={styles.contacts__item}>
-          <span className={styles.contacts__name}>{`${contact.name}:`}</span>
-          <span className={styles.contacts__number}>{contact.number}</span>
-          <button
-            type="button"
-            className={styles.contacts__delete__btn}
-            onClick={() => onDelete(contact.id)}
-          ></button>
-        </li>
-      ))}
-    </ul>
+    <>
+      {contacts.length > 0 ? (
+        <ul className={styles.contacts__list}>
+          {contacts.map((contact) => (
+            <li key={contact.id} className={styles.contacts__item}>
+              <span
+                className={styles.contacts__name}
+              >{`${contact.name}:`}</span>
+              <span className={styles.contacts__number}>{contact.number}</span>
+              <button
+                type="button"
+                className={styles.contacts__delete__btn}
+                onClick={() => onDelete(contact.id)}
+              ></button>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <Notification message="No contacts here yet..." />
+      )}
+    </>
   );
 };
 
