@@ -1,0 +1,21 @@
+.form__label {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  margin-bottom: 10px;
+}
+
+.form__input {
+  border: 1px solid #cdcdcd;
+  border-radius: 3px;
+  transition: background-color 500ms ease;
+}
+.form__input:hover,
+.form__input:focus {
+  background-color: #efefef;
+  box-shadow: none;
+}
+
+.form__input:focus {
+  outline: none;
+}

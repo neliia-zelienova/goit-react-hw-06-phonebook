@@ -1,0 +1,58 @@
+.contacts__list {
+  list-style: none;
+  padding-left: 0;
+  padding-right: 0;
+  width: 300px;
+}
+.contacts__item {
+  display: flex;
+  align-items: center;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+.contacts__item::before {
+  content: "";
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background-image: url("../../images/phone-24px.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.contacts__item:nth-child(odd) {
+  background-color: #e4dfdf;
+}
+
+.contacts__name {
+  padding-right: 10px;
+}
+.contacts__number {
+  padding-right: 10px;
+}
+.contacts__delete__btn {
+  display: inline-block;
+  height: 25px;
+  width: 30px;
+  background-image: url('../../images/delete-24px.svg');
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 1px solid #cdcdcd;
+  border-radius: 5px;
+  transition: box-shadow 500ms ease;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+.contacts__delete__btn:hover,
+:focus {
+  box-shadow: 0px 0px 13px 2px rgba(255,42,63,0.81);
+}
+
+.contacts__delete__btn:focus {
+  outline: none;
+}
